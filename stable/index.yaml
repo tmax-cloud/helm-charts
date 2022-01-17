@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helm-guestbook-test:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-01-17T03:02:43.68988805Z"
+    description: A Helm chart for Kubernetes
+    digest: 7443500a7d3b4301420a9b8e279e9e61048eeb94c0bcd4021b64cc143a7b0017
+    name: helm-guestbook-test
+    type: application
+    urls:
+    - https://tmax-cloud.github.io/helm-charts/stable/package/helm-guestbook-test-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-01-17T03:02:43.689090178Z"
