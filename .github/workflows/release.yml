@@ -1,0 +1,19 @@
+name: release
+on:
+  push:
+    branches:
+      - main
+    tags: '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Helm charts
+        uses: tmax-cloud/helm-charts@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          charts_dir: stable
+          target_dir: stable/package
+          index_dir: stable
