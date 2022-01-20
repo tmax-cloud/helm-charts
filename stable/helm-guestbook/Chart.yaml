@@ -28,3 +28,5 @@ home: https://httpd.apache.org/
 keywords:
   - test
   - guestbook
+maintainers:
+  - name: tmax-cloud
