@@ -158,13 +158,13 @@ upload() {
 
   if [[ -f "${INDEX_DIR}/index.yaml" ]]; then
     echo "Found index, merging changes"
-    helm repo index ${CHARTS_TMP_DIR} --url "https://tmax-cloud.github.io/helm-charts/stable" --merge "${INDEX_DIR}/index.yaml"
+    helm repo index ${CHARTS_TMP_DIR} --url "https://tmax-cloud.github.io/helm-charts/stable/package" --merge "${INDEX_DIR}/index.yaml"
     mv -f ${CHARTS_TMP_DIR}/*.tgz ${TARGET_DIR}
     mv -f ${CHARTS_TMP_DIR}/index.yaml ${INDEX_DIR}/index.yaml
   else
     echo "No index found, generating a new one"
     mv -f ${CHARTS_TMP_DIR}/*.tgz ${TARGET_DIR}
-    helm repo index ${INDEX_DIR} --url "https://tmax-cloud.github.io/helm-charts/stable"
+    helm repo index ${INDEX_DIR} --url "https://tmax-cloud.github.io/helm-charts/stable/package"
   fi
 
   git add ${TARGET_DIR}
