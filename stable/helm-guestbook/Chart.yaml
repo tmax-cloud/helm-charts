@@ -1,5 +1,5 @@
 apiVersion: v2
-name: helm-guestbook-test3
+name: helm-guestbook-test2
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -26,7 +26,7 @@ icon: https://folo.co.kr/img/gm_noimage.png
 # example home url
 home: https://httpd.apache.org/
 keywords:
-  - test3
+  - test2
   - guestbook
 maintainers:
   - name: tmax-cloud
