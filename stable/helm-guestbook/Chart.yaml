@@ -1,7 +1,20 @@
 apiVersion: v2
-name: helm-guestbook-test2
+name: helm-guestbook-test
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.1.0
 description: A Helm chart for Kubernetes
-
+# example home url
+home: https://httpd.apache.org/
+maintainers:
+  - name: tmax-cloud
+  - email: tmax-cloud@example.com
+# example icon 
+icon: https://folo.co.kr/img/gm_noimage.png
+keywords:
+  - test
+  - guestbook
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
@@ -11,22 +24,10 @@ description: A Helm chart for Kubernetes
 # a dependency of application charts to inject those utilities and functions into the rendering
 # pipeline. Library charts do not define any templates and therefore cannot be deployed.
 type: application
-
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-# Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.0
-
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: "1.0"
-# example icon 
-icon: https://folo.co.kr/img/gm_noimage.png
-# example home url
-home: https://httpd.apache.org/
-keywords:
-  - test2
-  - guestbook
-maintainers:
-  - name: tmax-cloud
+
+
+
