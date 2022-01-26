@@ -24,16 +24,16 @@ You can set repo name as what you want instead of tmax-stable.
 
 #### Chart.yaml
 Example of chart.yaml. Required field is marked.
-  apiVersion: Chart API version (required)
-  name: Chart name (required)
-  version: Chart version (required)
-  description: A single-sentence description for this chart
-  home: The URL of this project's home page
-  maintainers: (optional)
+- apiVersion: Chart API version (required)
+- name: Chart name (required)
+- version: Chart version (required)
+- description: A single-sentence description for this chart
+- home: The URL of this project's home page
+- maintainers: (optional)
   - name: The maintainer's name (required for each maintainer)
     email: The maintainer's email
     url: A URL for the maintainer
-  icon: A URL of SVG or PNG image to be used as an icon
-  keywords:
+- icon: A URL of SVG or PNG image to be used as an icon
+- keywords:
   - A list of keywords about this project
   
