@@ -12,7 +12,7 @@ You can set repo name as what you want instead of tmax-stable.
 
 
 ## Helm chart format
-- package/
+- example-chart/
   * [Chart.yaml](#Chart.yaml) (A YAML file containing information about the chart)
   * values.yaml       (The default configuration values for this chart)
   * charts/           (A directory containing any charts upon which this chart depends)
