@@ -37,4 +37,4 @@ maintainers:
 icon: A URL of SVG or PNG image to be used as an icon   
 keywords:   
 - A list of keywords about this project   
-  
+```
