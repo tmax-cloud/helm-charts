@@ -23,7 +23,7 @@ You can set repo name as what you want instead of tmax-stable.
 
 
 #### Chart.yaml
-Example of chart.yaml. Required field is marked.
+Example of chart.yaml. Required field is marked. ([예시](./stable/helm-guestbook/Chart.yaml))
 - apiVersion: Chart API version (required)   
 - name: Chart name (required)   
 - version: Chart version (required)   
