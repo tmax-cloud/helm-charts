@@ -9,7 +9,7 @@ description: A Helm chart for Kubernetes
 home: https://httpd.apache.org/
 maintainers:
   - name: tmax-cloud
-  - email: tmax-cloud@example.com
+    email: tmax-cloud@example.com
 # example icon 
 icon: https://folo.co.kr/img/gm_noimage.png
 keywords:
