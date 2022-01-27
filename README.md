@@ -17,6 +17,7 @@ You can set repo name as what you want instead of tmax-stable.
   * values.yaml       (The default configuration values for this chart)
   * charts/           (A directory containing any charts upon which this chart depends)
   * templates/        (A directory of templates that, when combined with values will generate valid Kubernetes manifest files)
+  * crds/             (A directory of crds, whose manifests are not deleted even if given release is uninstalled) 
   * LICENSE           (optional: A plain text file containing the license for the chart)
   * README.md         (optional: A human-readable README file)
   * requirements.yaml (optional: A YAML file listing dependencies for the chart)
