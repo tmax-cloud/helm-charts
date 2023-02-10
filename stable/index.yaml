@@ -23,9 +23,9 @@ entries:
   helm-guestbook-test2:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2023-02-10T02:07:03.053300295Z"
+    created: "2023-02-10T02:08:48.79838913Z"
     description: A Helm chart for Kubernetes
-    digest: ec69014ff9959c4525121725aaee52fdc5a29ce0b25f87b318ca0f91eabfb35d
+    digest: 6d5abb5752fba6bf05350f2ce4df2093fdb6f3582a775de845358fe4a4761878
     home: https://httpd.apache.org/
     icon: https://folo.co.kr/img/gm_noimage.png
     keywords:
@@ -41,4 +41,4 @@ entries:
     urls:
     - https://tmax-cloud.github.io/helm-charts/stable/package/helm-guestbook-test2-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-10T02:07:03.052724791Z"
+generated: "2023-02-10T02:08:48.797808926Z"
