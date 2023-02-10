@@ -1,0 +1,46 @@
+apiVersion: cicd.tmax.io/v1
+kind: IntegrationConfig
+metadata:
+  name: gitlab-config
+  namespace: default
+spec:
+  git:
+    type: gitlab
+    repository: root/helm-charts
+    token:
+      value: xGKHTDxr3T3V6yPSDqKq
+  jobs:
+    postSubmit:
+    - name: lint-chart
+      image: linkyard/docker-helm
+      command:
+      - helm lint charts/*
+      - helm lint charts/*/charts/*
+      when:
+        branch:
+        - master
+    - name: pages 
+      image: linkyard/docker-helm
+      command:
+      - golangci-lint run ./... -v -E gofmt --timeout 1h0m0s
+      when:
+        branch:
+        - master
+    postSubmit:
+    - name: build-push-image
+      image: quay.io/buildah/stable
+      command:
+      - buildah bud --format docker --storage-driver=vfs -f ./Dockerfile -t $IMAGE_URL .
+      - buildah push --storage-driver=vfs --creds=$CRED $IMAGE_URL docker://$IMAGE_URL
+      env:
+      - name: IMAGE_URL
+        value: tmaxcloudck/cicd-operator:recent
+      - name: CRED
+        valueFrom:
+          secretKeyRef:
+             name: tmaxcloudck-hub-credential
+             key: .dockerconfigjson
+      privileged: true
+      when:
+        tag:
+        - v.*

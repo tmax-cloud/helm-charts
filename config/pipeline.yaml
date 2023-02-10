@@ -1,0 +1,67 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: helm-test
+spec:
+  params:
+    - name: url
+      type: string
+    - name: token
+      description: "GitHub token"
+      type: string
+    - name: charts_dir
+      description: "The charts directory, defaults to `charts`"
+      default: "stable"
+    - name: target_dir
+      description: "The target directory to store the charts, defaults to `.`"
+      default: "stable/package"
+    - name: index_dir
+      description: "The location of `index.yaml` file in the repo, defaults to the same value as `target_dir`"
+      default: "stable"
+    - name: repo_url
+      description: "The github repository url"
+      type: string
+  tasks:
+  - name: repo-fetch
+    taskRef:
+      name: repo-fetch
+  - name: package-push
+    runAfter:
+     - repo-fetch
+    taskRef:
+      name: chart-push
+    params:
+      - name: url
+        value: "$(params.url)"
+      - name: token
+        value: "$(params.token)"
+      - name: charts_dir
+        value: "$(params.charts_dir)"
+      - name: target_dir
+        value: "$(params.target_dir)"
+      - name: index_dir
+        value: "$(params.index_dir)"
+      - name: repo_url
+        value: "$(params.index_repo_url)"
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: helm-repo-run-
+  namespace: default
+spec:
+  pipelineRef:
+    name: helm-test
+  params:
+    - name: url
+      value: "https://tmax-cloud.github.io/helm-charts/"
+    - name: token
+      value: "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"
+    - name: charts_dir
+      value: "stable"
+    - name: target_dir
+      value: "stable/package"
+    - name: index_dir
+      value: "stable"
+    - name: repo_url
+      value: "https://tmax-cloud.github.io/helm-charts/"
